@@ -37,7 +37,7 @@ pen.penup()
 pen.hideturtle()
 pen.goto(0, 250)
 pen.write("Score : 0 High Score : 0", align="center",
-		font=("candara", 24, "bold"))
+		font=("Courier", 24))
 
 def goup():
 	if head.direction != "down":
@@ -98,7 +98,7 @@ while True:
 		delay = 0.1
 		pen.clear()
 		pen.write("Score : {} High Score : {} ".format(
-			score, high_score), align="center", font=("candara", 24, "bold"))
+			score, high_score), align="center", font=("Courier", 24))
 	if head.distance(food) < 20:
 		x = random.randint(-270, 270)
 		y = random.randint(-270, 270)
@@ -116,7 +116,7 @@ while True:
 			high_score = score
 		pen.clear()
 		pen.write("Score : {} High Score : {} ".format(
-			score, high_score), align="center", font=("candara", 24, "bold"))
+			score, high_score), align="center", font=("Courier", 24))
 
 	for index in range(len(segments)-1, 0, -1):
 		x = segments[index-1].xcor()
@@ -142,6 +142,6 @@ while True:
 			delay = 0.1
 			pen.clear()
 			pen.write("Score : {} High Score : {} ".format(
-				score, high_score), align="center", font=("candara", 24, "bold"))
+				score, high_score), align="center", font=("Courier", 24))
 	time.sleep(delay)
 wn.mainloop()
