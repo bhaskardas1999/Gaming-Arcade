@@ -1,3 +1,7 @@
+# Bhaskar Das
+# Snake game revisited
+
+
 import turtle
 import time
 import random
@@ -13,6 +17,7 @@ wn.bgcolor("black")
 wn.setup(width=600, height=600)
 wn.tracer(0)
 
+# Snake
 head = turtle.Turtle()
 head.shape("square")
 head.color("white")
@@ -20,6 +25,7 @@ head.penup()
 head.goto(0, 0)
 head.direction = "Stop"
 
+# Food
 food = turtle.Turtle()
 colors = random.choice(['red', 'green'])
 shapes = random.choice(['circle','square'])
@@ -29,6 +35,7 @@ food.color(colors)
 food.penup()
 food.goto(0, 100)
 
+# Setting Up the Snake
 pen = turtle.Turtle()
 pen.speed(0)
 pen.shape("square")
@@ -36,9 +43,9 @@ pen.color("white")
 pen.penup()
 pen.hideturtle()
 pen.goto(0, 250)
-pen.write("Score : 0 High Score : 0", align="center",
-		font=("Courier", 24))
+pen.write("Score : 0 High Score : 0", align="center", font=("Courier", 24))
 
+# Snake movements
 def goup():
 	if head.direction != "down":
 		head.direction = "up"
@@ -68,7 +75,8 @@ def move():
 	if head.direction == "right":
 		x = head.xcor()
 		head.setx(x+20)
-		
+
+# Keyboard Bindings		
 wn.listen()
 wn.onkeypress(goup, "w")
 wn.onkeypress(godown, "s")
@@ -83,6 +91,7 @@ wn.onkeypress(goright, "D")
 
 segments = []
 
+# Main Game
 while True:
 	wn.update()
 	if head.xcor() > 290 or head.xcor() < -290 or head.ycor() > 290 or head.ycor() < -290:

@@ -1,5 +1,5 @@
 # Bhaskar Das
-# Pong game revisited
+# Pong [Human VS Machine] game revisited
 
 import turtle
 import time

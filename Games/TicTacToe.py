@@ -1,8 +1,14 @@
+# Bhaskar Das
+# TicTacToe game revisited
+
+
 import time
 import pygame, sys
 import numpy as np
+
 pygame.init()
 
+# Setup of X-O
 WIDTH = 600
 HEIGHT = 600
 LINE_WIDTH = 15
@@ -15,28 +21,29 @@ CIRCLE_WIDTH = 15
 CROSS_WIDTH = 25
 SPACE = 55
 
+# Setting up of Background
 RED = (255, 0, 0)
 BG_COLOR = (20, 200, 160)
 LINE_COLOR = (23, 145, 135)
 CIRCLE_COLOR = (239, 231, 200)
 CROSS_COLOR = (66, 66, 66)
 
+# Window GUI setup
 screen = pygame.display.set_mode( (WIDTH, HEIGHT) )
 pygame.display.set_caption( 'TIC TAC TOE' )
 screen.fill( BG_COLOR )
 
 board = np.zeros( (BOARD_ROWS, BOARD_COLS) )
 
+# Layout of the Board
 def draw_lines():
-	
 	pygame.draw.line( screen, LINE_COLOR, (0, SQUARE_SIZE), (WIDTH, SQUARE_SIZE), LINE_WIDTH )
-	
 	pygame.draw.line( screen, LINE_COLOR, (0, 2 * SQUARE_SIZE), (WIDTH, 2 * SQUARE_SIZE), LINE_WIDTH )
-
 	pygame.draw.line( screen, LINE_COLOR, (SQUARE_SIZE, 0), (SQUARE_SIZE, HEIGHT), LINE_WIDTH )
-
 	pygame.draw.line( screen, LINE_COLOR, (2 * SQUARE_SIZE, 0), (2 * SQUARE_SIZE, HEIGHT), LINE_WIDTH )
 
+# Main Game
+# To draw X-O on the Board
 def draw_figures():
 	for row in range(BOARD_ROWS):
 		for col in range(BOARD_COLS):
@@ -132,6 +139,7 @@ draw_lines()
 player = 1
 game_over = False
 
+# Game Over
 while True:
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:

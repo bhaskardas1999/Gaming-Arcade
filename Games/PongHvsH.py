@@ -1,11 +1,11 @@
 # Bhaskar Das
-# Pong game revisited
+# Pong [Human VS Human] game revisited
 
 import turtle
 import time
 
 window_panel = turtle.Screen()
-window_panel.title("PONG by Bhaskar Das")
+window_panel.title("PONG by Bhaskar")
 window_panel.bgcolor("black")
 window_panel.setup(width=800, height=600)
 window_panel.tracer(0)
